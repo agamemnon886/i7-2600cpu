@@ -1,0 +1,11 @@
+#!/bin/sh
+module="i7_2600cpu"
+device="i7_2600cpu"
+
+# invoke rmmod with all arguments we got
+/sbin/rmmod $module $* || exit 1
+
+# Remove stale nodes
+
+rm -f /dev/${device} /dev/${device}0
+
